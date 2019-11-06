@@ -4,4 +4,9 @@
     --color-neutral-light: #f6f6f6;
     --color-neutral-dim: #e6e6e6;
     --color-black:#222;
+    --margin-sm: .5em;
+    --margin: 1em;
+    --margin-lg: 1.5em;
+    --radius: .25em;
+    --shadow: 2px 2px 5px rgba(0,0,0,.15);
 }

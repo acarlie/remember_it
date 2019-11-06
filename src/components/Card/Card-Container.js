@@ -7,7 +7,7 @@ class CardContainer extends Component {
         const data = this.props.colors;
 
         return (
-            <div className={styles['container']}>
+            <div className={styles['card__container']}>
                 {
                     data.map((color, i) => {
                         return <Card key={i} color={color} />;
