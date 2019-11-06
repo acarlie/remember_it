@@ -1,0 +1,23 @@
+.app {
+    background: var(--color-neutral-light);  
+    background: -webkit-linear-gradient(to left, var(--color-neutral-dim), var(--color-neutral-light));
+    background: linear-gradient(to left, var(--color-neutral-dim), var(--color-neutral-light));
+    min-height: 100vh;
+}
+
+.container{
+    width: 90%;
+    margin: 0 auto;
+}
+
+@media only screen and (min-width: 768px) {
+    .container {
+        width: 80%;
+    }
+}
+
+@media only screen and (min-width: 1400px) {
+    .container {
+        width: 50%;
+    }
+}
