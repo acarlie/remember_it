@@ -28,5 +28,6 @@
         grid-template-columns: repeat(3, 33%);
         grid-column-gap: var(--margin-sm);
         grid-row-gap: var(--margin-sm);
+        padding: var(--margin);
     }
 }

@@ -1,4 +1,9 @@
 import React, { Component } from 'react';
+
+// Components
+import Header from '../Header/Header';
+import Container from '../Container/Container';
+import Jumbotron from '../Jumbotron/Jumbotron';
 import CardContainer from '../Card/Card-Container';
 
 // Data
@@ -11,6 +16,7 @@ import '../../assets/css/typography.css';
 import styles from './App.module.scss';
 
 class App extends Component {
+
     constructor (props) {
         super(props);
         this.state = {
@@ -23,18 +29,15 @@ class App extends Component {
     render () {
         return (
             <div className={styles['app']}>
-                <div className={styles['container']}>
-                    <header className={styles['header']}>
-                        <h1 className='text-center'>Remember It</h1>
-                    </header>
-                    <main>
-                        <section className='text-center'>
-                            Click on an image to earn points, but don't click on any more than once!
-                        </section>
+                <Header />
+                <main>
+                    <Jumbotron>
+                        Click on an image to earn points, but don't click on any more than once!
+                    </Jumbotron>
+                    <Container>
                         <CardContainer colors={this.state.colors} />
-
-                    </main>
-                </div>
+                    </Container>
+                </main>
             </div>
         );
     }

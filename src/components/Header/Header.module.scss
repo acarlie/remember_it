@@ -1,0 +1,8 @@
+.header {
+    color: var(--color-neutral-light);
+    background: var(--color-black);  
+    background: -webkit-linear-gradient(to right, #444, var(--color-black));
+    background: linear-gradient(to right, #444, var(--color-black));
+    box-shadow: var(--shadow);
+    padding: var(--margin);
+}
