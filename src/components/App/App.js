@@ -91,7 +91,7 @@ class App extends Component {
                 </Header>
                 <main>
                     <Jumbotron dismissable={true} title='Click a tile to begin!'>
-                        Click on an tile to earn points, but don't click on any more than once!
+                        Click on an tile to earn points, but don't click the same tile more than once!
                     </Jumbotron>
                     <Container>
                         <CardContainer>
