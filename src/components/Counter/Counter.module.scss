@@ -1,10 +1,11 @@
 .counter{
     color: var(--color-black);
-    background: var(--color-neutral-light);  
-    background: -webkit-linear-gradient(to left, var(--color-neutral-dim), var(--color-neutral-light));
-    background: linear-gradient(to left, var(--color-neutral-dim), var(--color-neutral-light));
+    background: #ddd;  
+    background: -webkit-linear-gradient(to right, var(--color-neutral-dim), #ddd);
+    background: linear-gradient(to right, var(--color-neutral-dim), #ddd);
     padding: .75em;
     border-radius: var(--radius);
+    box-shadow: var(--shadow);
 
     &:not(:first-child){
         margin-left: var(--margin-sm);
