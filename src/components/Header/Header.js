@@ -7,7 +7,14 @@ class Header extends Component {
         return (
             <header className={styles['header']}>
                 <Container>
-                    <h1 className='text-center'>Remember It</h1>
+                    <div className={styles['header__inner']}>
+                        <div className={styles['header__logo']}>
+                            <h1>Remember It</h1>
+                        </div>
+                        <div className={styles['header__content']}>
+                            {this.props.children}
+                        </div>
+                    </div>
                 </Container>
             </header>
         );

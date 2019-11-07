@@ -1,0 +1,13 @@
+.counter{
+    color: var(--color-black);
+    background: var(--color-neutral-light);  
+    background: -webkit-linear-gradient(to left, var(--color-neutral-dim), var(--color-neutral-light));
+    background: linear-gradient(to left, var(--color-neutral-dim), var(--color-neutral-light));
+    padding: .75em;
+    border-radius: var(--radius);
+
+    &:not(:first-child){
+        margin-left: var(--margin-sm);
+    }
+}
+

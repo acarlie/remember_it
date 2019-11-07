@@ -6,6 +6,7 @@ import Container from '../Container/Container';
 import Jumbotron from '../Jumbotron/Jumbotron';
 import CardContainer from '../Card/Card-Container';
 import Card from '../Card/Card';
+import Counter from '../Counter/Counter';
 
 // Data
 import colors from '../../assets/data/colors.js';
@@ -84,12 +85,13 @@ class App extends Component {
     render () {
         return (
             <div className={styles['app']}>
-                <Header />
+                <Header>
+                    <Counter count={this.state.score} title='Score' />
+                    <Counter count={this.state.topScore} title='Top Score' />
+                </Header>
                 <main>
                     <Jumbotron>
                         Click on an image to earn points, but don't click on any more than once!
-                        <p>Score: {this.state.score}</p>
-                        <p>Top Score: {this.state.topScore}</p>
                     </Jumbotron>
                     <Container>
                         <CardContainer>
