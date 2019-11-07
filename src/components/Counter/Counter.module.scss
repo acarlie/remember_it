@@ -6,9 +6,18 @@
     padding: .75em;
     border-radius: var(--radius);
     box-shadow: var(--shadow);
+    flex: 1;
+
 
     &:not(:first-child){
         margin-left: var(--margin-sm);
     }
+}
+
+@media only screen and (min-width: 768px) {
+    .counter{
+        flex: none;
+    }
+
 }
 

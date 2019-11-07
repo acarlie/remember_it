@@ -7,4 +7,6 @@
     --margin-lg: 2em;
     --radius: .25em;
     --shadow: 2px 2px 5px rgba(0,0,0,.15);
+    --headings-font: 'Rajdhani', sans-serif;
+    --body-font:'Roboto', sans-serif;
 }

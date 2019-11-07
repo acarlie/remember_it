@@ -1,20 +1,24 @@
 body {
-    font-family: 'Roboto', sans-serif;
+    font-family: var(--body-font);
     color: var(--color-black);
 }
 
 h1, h2, h3, h4, h5, h6 {
-    font-family: 'Rajdhani', sans-serif;
+    font-family: var(--headings-font);
 }
 
 h1, h2 {
     font-weight: 400;
 }
 
-h3, h4, h5, h6{
+h3, h4, h5, h6 {
     font-weight: bold;
 }
 
-.text-center{
+.text-center {
     text-align: center;
+}
+
+p:not(:first-child) {
+    margin-top: .75em;
 }

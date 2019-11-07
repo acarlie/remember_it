@@ -8,10 +8,12 @@
 
     &__inner{
         display: flex;
+        flex-direction: column;
     }
 
     &__logo{
         flex: 1;
+        text-align: center;
     }
 
     &__content{
@@ -19,5 +21,23 @@
         display: flex;
         align-items: center;
         justify-content: flex-end;
+    }
+}
+
+.container {
+    width: 90%;
+    margin: 0 auto;
+}
+
+@media only screen and (min-width: 768px) {
+    .header__logo{
+        text-align: left;
+    }
+
+    .header__inner{
+        flex-direction: row;
+    }
+
+    .header__content{
     }
 }

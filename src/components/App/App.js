@@ -90,8 +90,8 @@ class App extends Component {
                     <Counter count={this.state.topScore} title='Top Score' />
                 </Header>
                 <main>
-                    <Jumbotron>
-                        Click on an image to earn points, but don't click on any more than once!
+                    <Jumbotron dismissable={true} title='Click a tile to begin!'>
+                        Click on an tile to earn points, but don't click on any more than once!
                     </Jumbotron>
                     <Container>
                         <CardContainer>
