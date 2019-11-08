@@ -9,3 +9,11 @@
 * A new round will start immediately after the previous round is lost.
 * Current round score and top score are viewable at the top of the screen.
 * The maximum score possible is 12.
+
+### Deployed Site: https://acarlie.com/remember_it/
+
+---
+
+![Screenshot of Deployed Site](remember-it.JPG)
+
+
