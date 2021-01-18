@@ -7,6 +7,7 @@ import Jumbotron from '../Jumbotron/Jumbotron';
 import CardContainer from '../Card/Card-Container';
 import Card from '../Card/Card';
 import Counter from '../Counter/Counter';
+import Modal from '../Modal/Modal';
 
 // Data
 import colors from '../../assets/data/colors.js';
@@ -26,6 +27,15 @@ class App extends Component {
             picked: [],
             topScore: 0
         };
+        this.modalRef = React.createRef();
+    }
+
+    componentDidMount () {
+        document.addEventListener('keydown', (e) => {
+            if (e.code === 'Escape') {
+                this.modalRef.current.closeDialog();
+            }
+        });
     }
 
     shuffleArray = () => {
@@ -36,6 +46,7 @@ class App extends Component {
             colors[i] = colors[j];
             colors[j] = temp;
         }
+
         const firstCard = document.querySelector('button[class*="card"]');
         firstCard.focus();
 
@@ -77,12 +88,17 @@ class App extends Component {
         const isValid = this.state.picked.indexOf(id) === -1;
         if (isValid) {
             this.setPicked(id);
+            this.shuffleArray();
             this.incrementScore();
+            if (this.state.score === 11) {
+                this.modalRef.current.openDialog(12, this.state.topScore);
+            }
         } else {
             this.setTopScore(this.state.score);
+            this.shuffleArray();
+            this.modalRef.current.openDialog(this.state.score, this.state.topScore);
             this.resetGame();
         }
-        this.shuffleArray();
     }
 
     render () {
@@ -93,9 +109,9 @@ class App extends Component {
                     <Counter count={this.state.topScore} title='Top Score' />
                 </Header>
                 <main className={styles['main']}>
-                    <Jumbotron dismissable={true} title='Click a tile to begin!'>
-                        Click on an tile to earn points, but don't click the same tile more than once!
-                        <span className={styles['sr-only']}>Please note: cards will shuffle after each round and focus will be returned to the first card.</span>
+                    <Jumbotron dismissable={true} title='Click a button to begin!'>
+                        Click on an button to earn points, but don't click the same button more than once!
+                        <span className={styles['sr-only']}>Please note: buttons will shuffle after each round and focus will be returned to the first button. A round is won by selecting 12 different buttons in a row. A round is lost by clicking the same button twice within a round.</span>
                     </Jumbotron>
                     <Container>
                         <CardContainer>
@@ -106,6 +122,7 @@ class App extends Component {
                             }
                         </CardContainer>
                     </Container>
+                    <Modal ref={this.modalRef}/>
                 </main>
             </div>
         );
