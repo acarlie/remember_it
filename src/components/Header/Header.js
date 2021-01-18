@@ -9,7 +9,7 @@ class Header extends Component {
                 <Container>
                     <div className={styles['header__inner']}>
                         <div className={styles['header__logo']}>
-                            <h1>Remember It</h1>
+                            <h1 className="heading--1">Remember It</h1>
                         </div>
                         <div className={styles['header__content']}>
                             {this.props.children}

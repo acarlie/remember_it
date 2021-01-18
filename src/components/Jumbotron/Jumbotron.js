@@ -16,9 +16,9 @@ class Jumbotron extends Component {
 
     render () {
         return (
-            <section className={`text-center ${styles['jumbotron']} ${this.state.isDismissed ? styles['hidden'] : styles['visible']}`}>
+            <section className={`text-center ${styles['jumbotron']} ${this.state.isDismissed ? styles['hidden'] : styles['visible']}`} aria-hidden={this.state.isDismissed ? 'true' : null}>
                 <div className={styles['jumbotron__content']}>
-                    <h4>{this.props.title}</h4>
+                    <h2 className="heading--4">{this.props.title}</h2>
                     <p>{this.props.children}</p>
                     <p>{this.props.dismissable && <Button handler={this.dismissHandler}>Dismiss</Button>}</p>
                 </div>

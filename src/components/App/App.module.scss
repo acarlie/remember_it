@@ -4,3 +4,12 @@
     background: linear-gradient(to left, var(--color-neutral-dim), var(--color-neutral-light));
     min-height: 100vh;
 }
+
+.sr-only {
+    position:absolute;
+    left:-10000px;
+    top:auto;
+    width:1px;
+    height:1px;
+    overflow:hidden;
+}

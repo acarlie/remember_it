@@ -1,26 +1,28 @@
 .header {
     color: var(--color-neutral-light);
-    background: var(--color-black);  
+    background: var(--color-black);
     background: -webkit-linear-gradient(to right, #444, var(--color-black));
     background: linear-gradient(to right, #444, var(--color-black));
     box-shadow: var(--shadow);
     padding: var(--margin);
 
-    &__inner{
+    &__inner {
         display: flex;
         flex-direction: column;
     }
 
-    &__logo{
+    &__logo {
         flex: 1;
         text-align: center;
     }
 
-    &__content{
-        flex: 1;
-        display: flex;
-        align-items: center;
-        justify-content: flex-end;
+    &__content {
+        @media screen and (min-width: "360px") {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+        }
     }
 }
 
@@ -30,14 +32,11 @@
 }
 
 @media only screen and (min-width: 768px) {
-    .header__logo{
+    .header__logo {
         text-align: left;
     }
 
-    .header__inner{
+    .header__inner {
         flex-direction: row;
-    }
-
-    .header__content{
     }
 }

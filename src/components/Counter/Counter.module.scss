@@ -8,9 +8,21 @@
     box-shadow: var(--shadow);
     flex: 1;
 
-
     &:not(:first-child){
-        margin-left: var(--margin-sm);
+        margin-top: var(--margin-sm);
+    }
+
+    @media screen and (min-width: "360px") {
+        &:not(:first-child){
+            margin-top: 0;
+            margin-left: var(--margin-sm);
+        }
+    }
+    
+    @media screen and (min-width: "512px") {
+        grid-column-gap: var(--margin-sm);
+        grid-row-gap: var(--margin-sm);
+        padding: var(--margin);
     }
 }
 

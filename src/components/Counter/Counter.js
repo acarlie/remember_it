@@ -5,9 +5,9 @@ class Counter extends Component {
     render () {
         return (
             <div className={styles['counter']}>
-                <h5>
+                <span class="heading--5" aria-live="polite">
                     {this.props.title}: {this.props.count}
-                </h5>
+                </span>
             </div>
         );
     }

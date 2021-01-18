@@ -36,6 +36,9 @@ class App extends Component {
             colors[i] = colors[j];
             colors[j] = temp;
         }
+        const firstCard = document.querySelector('button[class*="card"]');
+        firstCard.focus();
+
         this.setState({
             colors
         });
@@ -89,9 +92,10 @@ class App extends Component {
                     <Counter count={this.state.score} title='Score' />
                     <Counter count={this.state.topScore} title='Top Score' />
                 </Header>
-                <main>
+                <main className={styles['main']}>
                     <Jumbotron dismissable={true} title='Click a tile to begin!'>
                         Click on an tile to earn points, but don't click the same tile more than once!
+                        <span className={styles['sr-only']}>Please note: cards will shuffle after each round and focus will be returned to the first card.</span>
                     </Jumbotron>
                     <Container>
                         <CardContainer>

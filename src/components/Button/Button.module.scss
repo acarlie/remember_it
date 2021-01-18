@@ -6,4 +6,13 @@
     font-weight: bold;
     box-shadow: var(--shadow);
     border-radius: var(--radius);
+    transition: background-color .25s;
+
+    &:hover {
+        background-color: #eee;
+    }
+
+    &:focus {
+        box-shadow: inset 0 0 0 3px #333,  var(--shadow);
+    }
 }
