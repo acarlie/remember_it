@@ -84,7 +84,7 @@ class Modal extends Component {
                         }
                     </p>
                     <div className={styles['modal__footer']}>
-                        <Button id="close" onClick={(e) => this.closeHandler(e)} ref={this.closeRef} fullWidth>Dismiss</Button>
+                        <Button id="close" onClick={(e) => this.closeHandler(e)} ref={this.closeRef} fullWidth>Play again</Button>
                     </div>
 
                 </div>
