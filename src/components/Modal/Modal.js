@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import styles from './Modal.module.scss';
+import Button from './../Button/Button.js';
 
 class Modal extends Component {
     constructor (props) {
@@ -19,7 +20,8 @@ class Modal extends Component {
             score: score,
             topScore: topScore
         }, () => {
-            this.closeRef.current.focus();
+           this.closeRef.current.setFocus();
+            // this.closeRef.current.focus();
         });
         this.body = document.getElementsByTagName('body')[0];
         this.body.style.height = '100%';
@@ -31,22 +33,22 @@ class Modal extends Component {
         this.setState({
             open: false
         }, () => {
-            const firstCard = document.querySelector('button[class*="card"]');
-            firstCard.focus();
+            // const firstCard = document.querySelector('button[class*="card"]');
+            // firstCard.focus();
         });
     }
 
     closeHandler = (e) => {
         e.preventDefault();
 
-        if (e.target.id === 'scrim' || e.target.id === 'close' || e.target.id === 'close-inner') {
+        if (e.target.id !== 'dialog' || e.target.id === 'close') {
             this.closeDialog();
         }
     }
 
     render () {
         return (
-            <div id="scrim" className={this.state.open ? styles['open'] + ' ' + styles['scrim'] : styles['closed'] + ' ' + styles['scrim']} onClick={(e) => this.closeHandler(e)}>
+            <div id="scrim" className={this.state.open ? styles['open'] + ' ' + styles['modal__scrim'] : styles['closed'] + ' ' + styles['modal__scrim']} onClick={(e) => this.closeHandler(e)}>
                 <div id="dialog" role="dialog" aria-labelledby="title" aria-describedby="description" className={this.state.open ? styles['open'] + ' ' + styles['modal'] : styles['closed'] + ' ' + styles['modal']}>
                     <h2 id="title" className="heading--4">
                         { this.state.score === 12 &&
@@ -65,7 +67,7 @@ class Modal extends Component {
                         }
 
                     </h2>
-                    <p id="description">
+                    <p id="description" className={styles['modal__desc']}>
                         { this.state.score === 12 &&
                             'You scored the maximum of 12 points! '
                         }
@@ -81,9 +83,10 @@ class Modal extends Component {
                             `Your score was ${this.state.score}`
                         }
                     </p>
-                    <button id="close" className={styles['close']} aria-label="close dialog" ref={this.closeRef} onClick={(e) => this.closeHandler(e)}>
-                        <span id="close-inner" onClick={(e) => this.closeHandler(e)}>×</span>
-                    </button>
+                    <div className={styles['modal__footer']}>
+                        <Button id="close" onClick={(e) => this.closeHandler(e)} ref={this.closeRef} fullWidth>Dismiss</Button>
+                    </div>
+
                 </div>
             </div>
         );

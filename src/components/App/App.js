@@ -47,8 +47,8 @@ class App extends Component {
             colors[j] = temp;
         }
 
-        const firstCard = document.querySelector('button[class*="card"]');
-        firstCard.focus();
+        // const firstCard = document.querySelector('button[class*="card"]');
+        // firstCard.focus();
 
         this.setState({
             colors
@@ -110,8 +110,8 @@ class App extends Component {
                 </Header>
                 <main className={styles['main']}>
                     <Jumbotron dismissable={true} title='Click a button to begin!'>
-                        Click on an button to earn points, but don't click the same button more than once!
-                        <span className={styles['sr-only']}>Please note: buttons will shuffle after each round and focus will be returned to the first button. A round is won by selecting 12 different buttons in a row. A round is lost by clicking the same button twice within a round.</span>
+                        Click on a button to earn points, but don't click the same button more than once!
+                        <span className={styles['sr-only']}>Please note: buttons will shuffle after each round. A round is lost by clicking the same button twice within a round. There are twelve possible points in a round.</span>
                     </Jumbotron>
                     <Container>
                         <CardContainer>

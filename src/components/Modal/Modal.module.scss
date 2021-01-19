@@ -19,41 +19,35 @@
     min-height: 12rem;
     
     @media screen and (min-width: 512px), print {
-        min-width: 50%;
-    }
-}
-
-.inner {
-    position: relative;
-}
-
-.scrim {
-    position: fixed;
-    background-color: rgba(0,0,0, .50);
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100vh;
-}
-
-.close {
-    background-color: var(--color-neutral-dim);
-    border-radius: 0 0 0 1rem;
-    position: absolute;
-    top: 0;
-    right: 0;
-    padding: 1.125rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    span {
-        font-size: 1.75rem;
-        color: rgba(0,0,0, .75);
-        line-height: .75;
+        max-width: 50%;
     }
 
-    &:focus {
-        box-shadow: inset 0 0 0 3px #555;
+    @media screen and (min-width: 768px), print {
+        max-width: 40%;
+    }
+    
+    @media screen and (min-width: 960px), print {
+        max-width: 30%;
+    }
+
+    &__desc {
+        margin: 1rem 0 0 0;
+    }
+
+    &__footer {
+        margin: 2rem 0 0 0;
+    }
+
+    &__inner {
+        position: relative;
+    }
+
+    &__scrim {
+        position: fixed;
+        background-color: rgba(0,0,0, .50);
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
     }
 }
