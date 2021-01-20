@@ -47,9 +47,6 @@ class App extends Component {
             colors[j] = temp;
         }
 
-        // const firstCard = document.querySelector('button[class*="card"]');
-        // firstCard.focus();
-
         this.setState({
             colors
         });
@@ -97,7 +94,6 @@ class App extends Component {
             this.setTopScore(this.state.score);
             this.shuffleArray();
             this.modalRef.current.openDialog(this.state.score, this.state.topScore);
-            this.resetGame();
         }
     }
 
@@ -122,7 +118,7 @@ class App extends Component {
                             }
                         </CardContainer>
                     </Container>
-                    <Modal ref={this.modalRef}/>
+                    <Modal ref={this.modalRef} reset={this.resetGame}/>
                 </main>
             </div>
         );

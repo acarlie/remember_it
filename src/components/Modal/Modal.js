@@ -14,27 +14,27 @@ class Modal extends Component {
         this.closeRef = React.createRef();
     }
 
+    componentDidMount () {
+        this.body = document.getElementsByTagName('body')[0];
+    }
+
     openDialog = (score, topScore) => {
         this.setState({
             open: true,
             score: score,
             topScore: topScore
         }, () => {
-           this.closeRef.current.setFocus();
-            // this.closeRef.current.focus();
+            this.closeRef.current.setFocus();
+            this.setBodyStyle(true);
         });
-        this.body = document.getElementsByTagName('body')[0];
-        this.body.style.height = '100%';
-        this.body.style.overflow = 'hidden';
     }
 
     closeDialog = () => {
-        this.body.style = '';
         this.setState({
             open: false
         }, () => {
-            // const firstCard = document.querySelector('button[class*="card"]');
-            // firstCard.focus();
+            this.props.reset();
+            this.setBodyStyle(false);
         });
     }
 
@@ -43,6 +43,15 @@ class Modal extends Component {
 
         if (e.target.id === 'scrim' || e.target.id === 'close') {
             this.closeDialog();
+        }
+    }
+
+    setBodyStyle = (isOpen) => {
+        if (isOpen) {
+            this.body.style.height = '100%';
+            this.body.style.overflow = 'hidden';
+        } else {
+            this.body.style = '';
         }
     }
 
