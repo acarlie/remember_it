@@ -106,14 +106,14 @@ class App extends Component {
                 </Header>
                 <main className={styles['main']}>
                     <Jumbotron dismissable={true} title='Click a button to begin!'>
-                        Click on a button to earn points, but don't click the same button more than once!
-                        <span className={styles['sr-only']}>Please note: buttons will shuffle after each round. A round is lost by clicking the same button twice within a round. There are twelve possible points in a round.</span>
+                        Click on a button to earn points, but don't click the same color more than once!
+                        <span className={styles['sr-only']}>Please note: buttons will shuffle after each round. A round is lost by clicking the same color button twice. There are twelve possible points in a round.</span>
                     </Jumbotron>
                     <Container>
                         <CardContainer>
                             {
                                 this.state.colors.map((color, i) => {
-                                    return <Card key={i} color={color} checkChoice={this.checkChoice} />;
+                                    return <Card key={i} color={color} checkChoice={this.checkChoice} num={i} />;
                                 })
                             }
                         </CardContainer>

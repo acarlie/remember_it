@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import styles from './Button.module.scss';
 
 class Button extends Component {
-     constructor (props) {
+    constructor (props) {
         super(props);
         this.buttonRef = React.createRef();
     }
