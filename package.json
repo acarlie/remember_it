@@ -5,7 +5,7 @@
   "homepage": "https://acarlie.github.io/remember_it",
   "dependencies": {
     "gh-pages": "^2.1.1",
-    "node-sass": "^4.14.1",
+    "node-sass": "^7.0.0",
     "react": "^16.11.0",
     "react-dom": "^16.11.0",
     "react-scripts": "3.2.0"
